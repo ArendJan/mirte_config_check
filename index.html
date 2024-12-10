@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js" integrity="sha512-CSBhVREyzHAjAFfBlIBakjoRUKp5h7VSweP0InR/pAJyptH7peuhCsqAI/snV+TwZmXZqoUklpXp6R6wMnYf5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./check.js"></script>
+
+    <script>
+        function checkb() {
+            
+            let input = document.getElementById('input').value;
+            let result = check(input);
+            console.log(result);
+            document.getElementById('result').innerHTML = 'Errors:<br>' + result.errors.join('<br>').replace(/\n/g, '<br>') + '<br>Warnings:<br>' + result.warnings.join('<br>').replace(/\n/g, '<br>'); 
+        }
+    </script>
+</head>
+<body>
+    <textarea id="input"></textarea><br>
+    <button onclick="checkb()">Check</button>
+    <br>
+    <p id="result"></p>
+</body>
+<html>
